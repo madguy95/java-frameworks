@@ -13,9 +13,10 @@ public class StudentServiceImpl implements StudentService {
 	@Autowired
 	private StudentMapper studentMapper;
 	
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	public void insertStudent(Student student) {
 		studentMapper.insertStudent(student);
+//		throw new RuntimeException("test rollback");
 	}
 
 	public boolean getStudentByLogin(String userName, String password) {

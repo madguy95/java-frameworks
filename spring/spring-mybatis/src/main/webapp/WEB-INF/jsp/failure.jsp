@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login Failure</title>
-<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
+<link href="resources/assets/css/bootstrap-united.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -15,7 +15,7 @@
 		
 	</script>
 
-	<script src="bootstrap/js/bootstrap.js">
+	<script src="resources/bootstrap/js/bootstrap.js">
 		
 	</script>
 
@@ -34,9 +34,9 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/StudentEnrollmentWithMyBatis">Home</a></li>
-				<li><a href="signup.html">Signup</a></li>
-				<li class="active"><a href="login.html">Login</a></li>
+				<li><a href="/SpringWithMyBatis">Home</a></li>
+				<li><a href="signup">Signup</a></li>
+				<li class="active"><a href="login">Login</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Explore<b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -67,7 +67,7 @@
 	<div></div>
 	<div></div>
 
-	<a class="btn btn-primary" href="<spring:url value="login.html"/>">Try
+	<a class="btn btn-primary" href="<spring:url value="login"/>">Try
 		again?</a>
 </body>
 </html>

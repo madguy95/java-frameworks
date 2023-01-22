@@ -10,9 +10,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Student Enrollment Signup</title>
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
-<link href="datepicker/css/datepicker.css" rel="stylesheet" />
-<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
+<link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="resources/datepicker/css/datepicker.css" rel="stylesheet" />
 
 <style>
 .green {
@@ -41,49 +40,39 @@
 </head>
 <body>
 
-	<div class="navbar navbar-default">
+	<script src="resources/bootstrap/js/bootstrap.js">
+		
+	</script>
+	<script src="resources/jquery-3.2.1.min.js"></script>
+	<script src="resources/datepicker/js/bootstrap-datepicker.js">
+		
+	</script>
 
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-		</div>
+	<div>
+		<nav class="navbar navbar-light bg-light justify-content-between">
+		<a class="navbar-brand">Navbar</a>
+		<form class="form-inline">
+			<input class="form-control mr-sm-2" type="search"
+				placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+		<ul class="nav nav-pills ">
+			<li class="nav-item "><a class="nav-link"
+				href="/SpringWithMyBatis">Home</a></li>
+			<li class="nav-item"><a class="nav-link active" href="signup">Signup</a></li>
+			<li class="nav-item"><a class="nav-link " href="login">Login</a></li>
 
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search">
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/StudentEnrollmentWithMyBatis">Home</a></li>
-				<li class="active"><a href="signup.html">Signup</a></li>
-				<li><a href="login.html">Login</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Explore<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Contact us</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Further Actions</a></li>
-					</ul></li>
-			</ul>
-		</div>
-		<!-- /.nav-collapse -->
+			<li class="nav-item dropdown"><a href="#"
+				class=" nav-link dropdown-toggle" data-toggle="dropdown">Explore<b
+					class="caret"></b></a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">Contact us</a>
+					<div class="divider"></div>
+					<a class="dropdown-item" href="#">Further Actions</a>
+				</div>
+		</ul>
+		</nav>
 	</div>
-
-	<script src="jquery-1.8.3.js">
-		
-	</script>
-
-	<script src="bootstrap/js/bootstrap.js">
-		
-	</script>
-
-	<script src="datepicker/js/bootstrap-datepicker.js">
-		
-	</script>
-
-
 	<div class="container">
 		<div class="jumbotron">
 			<div>
@@ -105,7 +94,7 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<form:form id="myForm" method="post"
-							class="bs-example form-horizontal" commandName="student">
+							class="bs-example form-horizontal" modelAttribute="student">
 							<fieldset>
 								<legend>Student Enrollment Signup Form</legend>
 
@@ -151,8 +140,9 @@
 								<div class="form-group">
 									<label for="dateOfBirthInput" class="col-lg-3 control-label">Date
 										of Birth</label>
-									<div class="date form_date col-lg-9" data-date-format="mm/dd/yyyy" data-date-viewmode="years">
-										<form:input type="text" class="form-control"											
+									<div class="date form_date col-lg-9"
+										data-date-format="mm/dd/yyyy" data-date-viewmode="years">
+										<form:input type="text" class="form-control"
 											path="dateOfBirth" id="dateOfBirthInput"
 											placeholder="Date of Birth" />
 										<form:errors path="dateOfBirth" cssClass="error" />

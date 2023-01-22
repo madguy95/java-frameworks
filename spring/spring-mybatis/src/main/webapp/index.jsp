@@ -1,12 +1,13 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
-<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+<link href="<c:url value="resources/bootstrap/css/bootstrap.min.css"/>"
+	rel="stylesheet" />
 <style>
 body {
 	height: 100%;
 	margin: 0;
-	background: url(assets/img/books.jpg);
+	background: url(resources/assets/img/books.jpg);
 	background-size: 1440px 800px;
 	background-repeat: no-repeat;
 	display: compact;
@@ -14,34 +15,29 @@ body {
 </style>
 </head>
 <body>
-	<div class="navbar navbar-default">
-
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-		</div>
-
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search">
+	<div>
+		<nav class="navbar navbar-light bg-light justify-content-between">
+			<a class="navbar-brand">Navbar</a>
+			<form class="form-inline">
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="signup.html">Signup</a></li>
-				<li><a href="login.html">Login</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Explore<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Contact us</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Further Actions</a></li>
-					</ul></li>
+			<ul class="nav nav-pills ">
+				<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="signup">Signup</a></li>
+				<li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+
+				<li class="nav-item dropdown"><a href="#"
+					class=" nav-link dropdown-toggle" data-toggle="dropdown">Explore<b
+						class="caret"></b></a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">Contact us</a>
+						<div class="divider"></div>
+						<a class="dropdown-item" href="#">Further Actions</a>
+					</div>
 			</ul>
-		</div>
-		<!-- /.nav-collapse -->
+		</nav>
 	</div>
 	<div class="container">
 		<div class="jumbotron">
@@ -51,17 +47,19 @@ body {
 					us. Or login to access your details, if you are already enrolled.</p>
 			</div>
 
-			<a class="btn btn-primary" href="signup.html">Signup » </a> <a
-				class="btn btn-primary" href="login.html">Login » </a>
+			<a class="btn btn-primary" href="signup">Signup » </a> <a
+				class="btn btn-primary" href="login">Login » </a>
 		</div>
 
 		<div></div>
 	</div>
-	<script src="jquery-1.8.3.js">
-</script>
+	<script src="resources/jquery-3.2.1.min.js">
+		
+	</script>
 
-	<script src="bootstrap/js/bootstrap.js">
-</script>
+	<script src="resources/bootstrap/js/bootstrap.min.js">
+		
+	</script>
 
 </body>
 </html>
