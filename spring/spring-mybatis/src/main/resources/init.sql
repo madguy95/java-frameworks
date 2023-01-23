@@ -8,3 +8,7 @@ CREATE TABLE `student` (
   `userName` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+
+INSERT INTO student
+(id, dateOfBirth, emailAddress, firstName, lastName, password, userName)
+VALUES(43, '2000-01-01 00:00:00', 'abc@gmail.com', 'tinh', 'nguyen', 'admin', 'admin');
