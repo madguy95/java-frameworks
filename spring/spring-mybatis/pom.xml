@@ -12,13 +12,12 @@
 		<jstl.version>1.2</jstl.version>
 	</properties>
 	<dependencies>
-		 <!-- Spring MVC Dependency -->
+		<!-- Spring MVC Dependency -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
 		<!-- JSTL Dependency -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 		<dependency>
@@ -27,11 +26,10 @@
 			<version>${jstl.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-            <version>${tld.version}</version>
-        </dependency>
-        
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>${tld.version}</version>
+		</dependency>
 		<!-- test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -78,6 +76,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.1</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
