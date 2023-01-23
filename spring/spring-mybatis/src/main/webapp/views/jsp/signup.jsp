@@ -12,7 +12,7 @@
 <title>Student Enrollment Signup</title>
 <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="resources/datepicker/css/datepicker.css" rel="stylesheet" />
-
+<c:set var="context" value="${pageContext.request.contextPath}" />
 <style>
 .green {
 	font-weight: bold;
@@ -58,7 +58,7 @@
 		</form>
 		<ul class="nav nav-pills ">
 			<li class="nav-item "><a class="nav-link"
-				href="/SpringWithMyBatis">Home</a></li>
+				href="${context}">Home</a></li>
 			<li class="nav-item"><a class="nav-link active" href="signup">Signup</a></li>
 			<li class="nav-item"><a class="nav-link " href="login">Login</a></li>
 

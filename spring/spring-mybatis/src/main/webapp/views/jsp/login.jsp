@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<c:set var="context" value="${pageContext.request.contextPath}" />
 <link href="<c:url value="resources/bootstrap/css/bootstrap.min.css"/>"
 	rel="stylesheet" />
 
@@ -38,7 +38,7 @@
 		</form>
 		<ul class="nav nav-pills ">
 			<li class="nav-item "><a class="nav-link"
-				href="/SpringWithMyBatis">Home</a></li>
+				href="${context}">Home</a></li>
 			<li class="nav-item"><a class="nav-link" href="signup">Signup</a></li>
 			<li class="nav-item"><a class="nav-link active" href="login">Login</a></li>
 
