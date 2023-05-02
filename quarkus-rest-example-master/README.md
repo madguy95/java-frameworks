@@ -100,3 +100,29 @@ To build image and run with docker
 $ docker build -f src/main/docker/Dockerfile.native -t quarkus/quarkus-rest-example .
 $ docker run -i --rm -p 8080:8080 quarkus/quarkus-rest-example
 ```
+
+To build with JIB
+
+application.properties
+
+```txt
+quarkus.container-image.build=true  
+quarkus.container-image.group=htl-leonding
+quarkus.container-image.name=vehicle
+quarkus.container-image.tag=latest
+quarkus.jib.ports=8080
+```
+
+quarkus.container-image.build=true  - property is mandatory for building the docker image
+
+
+```bash
+$ mvn quarkus:add-extension -Dextensions=container-image-jib
+$ mvn clean package -DskipTests
+```
+
+## Refer
+
+https://htl-leonding-college.github.io/quarkus-docker-gh-actions-demo/#_using_jib
+
+https://quarkus.io/guides/container-image#docker
