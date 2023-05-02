@@ -1,5 +1,17 @@
 # Quarkus RESt API example
 
+## Prerequisites
+
+To complete this guide, you need:
+
+An IDE
+
+JDK 11+ installed with JAVA_HOME configured appropriately
+
+Apache Maven 3.8.8
+
+A working container runtime (Docker or Podman)
+
 This project uses Quarkus to build REST APIs. 
 
 For the tutorials check the below links,
@@ -70,3 +82,21 @@ $ ./mvnw quarkus:dev -Ddebug
 ```
 
 This activates debug on port `5005`. Then use your IDE to connect to `localhost:5005` to debug the application.
+
+
+## build app
+
+To build native file 
+
+```bash
+$ mvn package -Pnative -Dquarkus.native.container-build=true -Dquarkus.container-image.build=true -DskipTests
+```
+
+-Dquarkus.native.container-build=true -Dquarkus.container-image.build=true : Setting to build in container without graalvm installed local
+
+To build image and run with docker
+
+```bash
+$ docker build -f src/main/docker/Dockerfile.native -t quarkus/quarkus-rest-example .
+$ docker run -i --rm -p 8080:8080 quarkus/quarkus-rest-example
+```
