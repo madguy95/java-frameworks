@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: querydsl
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  oracle-xe:
+    image: container-registry.oracle.com/database/free:latest
+    container_name: oracle
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PWD=your_password
+      - ORACLE_CHARACTERSET=AL32UTF8
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: querydsl
+    ports:
+      - "3306:3306"
+  phpmyadmin:
+    depends_on:
+      - mysql
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8090:80"
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: 123456
+volumes:
+  db_data:
+  oracle_data:
