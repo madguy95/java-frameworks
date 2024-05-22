@@ -9,6 +9,7 @@ import io.jay.service.model.TeamVI;
 import io.jay.service.model.projection.TeamDTO;
 import io.jay.service.model.projection.TeamView;
 import io.jay.service.repository.TeamRepository;
+import io.jay.service.repository.blaze_persistence.BlazeService;
 import io.jay.service.repository.isolation.DemoIsolationService;
 import io.jay.service.repository.jpa.TeamJPARepository;
 import io.jay.service.repository.jpa.hibernate.TeamHibernateImpl;
@@ -165,6 +166,36 @@ class CriteriaController {
 }
 
 @Controller
+@RequestMapping("/blaze")
+@ResponseBody
+@RequiredArgsConstructor
+class BlazeController {
+
+    private final BlazeService blazeService;
+
+    @GetMapping("/teams/{id}")
+    public List<io.jay.service.repository.blaze_persistence.TeamView> search3Teams(@PathVariable long id,
+                                                                                   @RequestParam(required = false) String name,
+                                                                                   @RequestParam(required = false) String member) {
+        return blazeService.retrieveTeamsByCriteria(id, name, member);
+    }
+
+    @GetMapping("/teams/v2/{id}")
+    public List<io.jay.service.repository.blaze_persistence.TeamView> searchTeamsV2(@PathVariable long id,
+                                                                                    @RequestParam(required = false) String name,
+                                                                                    @RequestParam(required = false) String member) {
+        return blazeService.retrieveTeamsByFetchAlias(id, name, member);
+    }
+
+    @GetMapping("/teams/v3/{id}")
+    public List<io.jay.service.repository.blaze_persistence.TeamView.JoinTeamView> searchTeamsV3(@PathVariable long id,
+                                                                                                 @RequestParam(required = false) String name,
+                                                                                                 @RequestParam(required = false) String member) {
+        return blazeService.retrieveTeamsByEntityView(id, name, member);
+    }
+}
+
+@Controller
 @RequestMapping("/hib")
 @ResponseBody
 @RequiredArgsConstructor
@@ -239,6 +270,7 @@ class LockController {
      * Postgresql/ Mysql : Select not block on other transaction (select ... for share)
      * Oracle: Select block on other transaction (select ... for update)
      * Mysql: error when save
+     *
      * @return
      */
     @GetMapping("/pess-read")
@@ -309,7 +341,7 @@ class LockController {
      * Check Concurrent Update [False], Check Concurrent Insert [True]
      * 8 : Result : [{DIRTY_READ=false, PHANTOM_READ=false, REPEATABLE_READ=false}]
      * Check Concurrent Update [False], Check Concurrent Insert [False]
-     *
+     * <p>
      * Oracle :
      * 1 : Not supported
      * 2 : Result : [{DIRTY_READ=false, PHANTOM_READ=true, REPEATABLE_READ=true}]
@@ -317,7 +349,7 @@ class LockController {
      * 4 : Not supported
      * 8 : Result : [{DIRTY_READ=false, PHANTOM_READ=false, REPEATABLE_READ=false}]
      * Check Concurrent Update [False - Deadlock], Check Concurrent Insert [True]
-     *
+     * <p>
      * Mysql :
      * 1 : Result : [{DIRTY_READ=true, PHANTOM_READ=true, REPEATABLE_READ=true}]
      * Check Concurrent Update [False], Check Concurrent Insert [True]
@@ -327,6 +359,7 @@ class LockController {
      * Check Concurrent Update [False], Check Concurrent Insert [True]
      * 8 : Result : [{DIRTY_READ=false, PHANTOM_READ=false, REPEATABLE_READ=false}]
      * Check Concurrent Update [False], Check Concurrent Insert [False]
+     *
      * @param level
      * @return
      */
