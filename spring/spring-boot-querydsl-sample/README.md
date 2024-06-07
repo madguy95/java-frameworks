@@ -1,0 +1,1 @@
+https://dzone.com/articles/upgrade-guide-to-spring-boot-3-for-spring-data-jpa-3-and-querydsl-5

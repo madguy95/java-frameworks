@@ -44,6 +44,20 @@ services:
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: 123456
+
+  mongodb:
+    image: mongodb/mongodb-community-server:7.0-ubi8
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGODB_INITDB_DATABASE=mongo_db
+      - MONGODB_INITDB_ROOT_USERNAME=mongo
+      - MONGODB_INITDB_ROOT_PASSWORD=123456
+    volumes:
+      - type: bind
+        source: mongo_db
+        target: /data/db
 volumes:
   db_data:
   oracle_data:
+  mongo_db:

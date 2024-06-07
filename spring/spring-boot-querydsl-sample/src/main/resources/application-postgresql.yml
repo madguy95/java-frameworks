@@ -3,9 +3,21 @@ spring:
     url: jdbc:postgresql://localhost:5432/querydsl?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
     username: myuser
     password: mypassword
-    driverClassName: org.postgresql.Driver
-    hikari:
-      connection-init-sql: "SET SESSION lock_timeout = '5000ms';"
+#    driverClassName: org.postgresql.Driver
+#    hikari:
+#      connection-init-sql: "SET SESSION lock_timeout = '5000ms';"
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mongo_db
+      username: mongo    # MongoDB username
+      password: "123456"   # MongoDB password
+      authentication-database: admin  #Authentication database
+      auto-index-creation: true   # Automatically create indexes
+      write-concern: NORMAL       # Write concern level (e.g., MAJORITY, NORMAL)
+      replica-set: <replica_set_name>  # Replica set name (if applicable)
 
 #  h2:
 #    console:
@@ -24,4 +36,5 @@ logging:
     root: INFO
     org.springframework.web: ERROR
     org.hibernate: INFO
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 #    org.hibernate.orm.jdbc.bind: TRACE
