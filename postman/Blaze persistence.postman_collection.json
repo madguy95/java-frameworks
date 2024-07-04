@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "4c412f04-c428-431e-8bee-a871a9653f6f",
+		"name": "Blaze persistence",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34997761"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/blaze/teams/1?name=first&member=jay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blaze",
+						"teams",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "first"
+						},
+						{
+							"key": "member",
+							"value": "jay"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/blaze/teams/v2/1?name=first&member=jay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blaze",
+						"teams",
+						"v2",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "first"
+						},
+						{
+							"key": "member",
+							"value": "jay"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/blaze/teams/v3/1?name=first&member=jay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blaze",
+						"teams",
+						"v3",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "first"
+						},
+						{
+							"key": "member",
+							"value": "jay"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

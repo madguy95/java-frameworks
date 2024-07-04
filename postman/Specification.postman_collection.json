@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "e35f0f9e-b0f2-47f1-a728-0fab797d048a",
+		"name": "Specification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34997761"
+	},
+	"item": [
+		{
+			"name": "v2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/spec/teams/v2/1?name=first&member=jay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spec",
+						"teams",
+						"v2",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "first"
+						},
+						{
+							"key": "member",
+							"value": "jay"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/spec/teams/1?name=first&member=jay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spec",
+						"teams",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "first"
+						},
+						{
+							"key": "member",
+							"value": "jay"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

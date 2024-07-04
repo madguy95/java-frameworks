@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "bc174310-55a6-4fc8-b63a-f00300577ce8",
+		"name": "Mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34997761"
+	},
+	"item": [
+		{
+			"name": "team-example2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mongo/teams-example2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mongo",
+						"teams-example2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

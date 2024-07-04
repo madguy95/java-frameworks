@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "fe6e0e56-c467-498e-9ef0-0230016679aa",
+		"name": "Criteria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34997761"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/criteria/teams/1?name=first&member=jay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"criteria",
+						"teams",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "first"
+						},
+						{
+							"key": "member",
+							"value": "jay"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/criteria/teams/v2/1?name=first&member=jay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"criteria",
+						"teams",
+						"v2",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "first"
+						},
+						{
+							"key": "member",
+							"value": "jay"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
